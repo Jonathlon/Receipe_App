@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Satisfy&display=swap" rel="stylesheet">
+    <script src="static/home.js" defer></script>
+    <title>Recipes</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: top;
+            height: 100vh;
+            background-image: url("{% static 'recipes/images/kitchen.jpg' %}");
+            background-size: cover;
+            background-position: center;
+        }
+
+        .home-container {
+            font-family: "Satisfy", cursive;
+            font-weight: 400;
+            font-style: normal;
+
+        }
+
+        footer {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            margin-bottom: 20px;
+            margin-left: 20px;
+
+        }
+
+        .website-counter-container {
+            font-family: "Satisfy", cursive;
+            font-weight: 700;
+            font-style: normal;
+            display: inline-block;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .website-counter {
+            display: inline;
+        }
+
+        #reset {
+            background-color: rgb(4, 45, 248);
+            cursor: pointer;
+            margin-top: 5px;
+            padding: 5px 15px;
+            border: 2px solid #65553f;
+            border-radius: 10px;
+            text-align: center;
+            color: #ffff;
+        }
+
+        h1 {
+            font-size: 100px;
+        }
+
+        h2 {
+            font-size: 50px;
+            text-align: center;
+
+        }
+    </style>
+</head>
+
+
+<body>
+    <section class="home-container">
+        <h1>
+            Home of the Recipes
+        </h1>
+        <h2>
+            <a href="{% url 'login' %}"> Enter</a>
+        </h2>
+    </section>
+
+</body>
+
+<footer>
+    <div class="website-counter-container">Number of visits to this site: </div>
+    <div class="website-counter"></div>
+    <div id="reset">Reset</div>
+</footer>
+
+</html>

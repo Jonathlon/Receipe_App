@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Recipe Details</title>
+    <link href="https://fonts.googleapis.com/css2?family=Satisfy&display=swap" rel="stylesheet">
+    <style>
+        /* CSS styling for the page */
+        body {
+            display: block;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            font-family: "Poppins", sans-serif;
+            text-align: left;
+            background-image: url("{% static 'recipes/images/kitchen.jpg' %}");
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            color: white;
+            text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+        }
+
+        /* CSS styling for the container */
+        .container {
+            max-width: 400px;
+            margin: 0 auto;
+            margin-top: 150px;
+            padding: 20px;
+            background-color: rgba(0, 0, 0, 0.7);
+            border-radius: 12px;
+            box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.5);
+        }
+
+        /* CSS styling for the image */
+        .recipe-image {
+            display: block;
+            margin: 0 auto;
+            width: 400px;
+            height: 265px;
+            object-fit: cover;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.5);
+        }
+
+        .header {
+            display: block;
+            padding: 20px;
+            text-align: left;
+
+        }
+
+        .nav-item {
+            font-family: "Satisfy", cursive;
+            font-size: 25px;
+            padding-left: 50px;
+
+        }
+    </style>
+</head>
+<header class="header">
+    <div>
+        <a href="/list/" class="nav-item">Back to recipes</a>
+    </div>
+</header>
+
+<body>
+    <div class="container">
+        <img src="{{ object.pictures.url }}" alt="{{ object.name }}" class="recipe-image" />
+        <h2>{{ object.name }}</h2>
+        <p>{{ object.description }}</p>
+        <p>Ingredients: {{object.ingredients}}</p>
+        <p>Cooking Time: {{ object.cooking_time }} min</p>
+        <p>Difficulty Level: {{object.calc_difficulty}}</p>
+    </div>
+</body>
+
+</html>
