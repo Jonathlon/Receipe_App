@@ -29,7 +29,7 @@ DEBUG = False
 
 ALLOWED_HOSTS = [
     'https://fathomless-springs-97746-0dc8d81cc4d2.herokuapp.com/'
-    'http://127.0.0.1:8000/'
+    'http://127.0.0.1:8000'
     '*'
 ]
 
